@@ -30,7 +30,7 @@ public class DemoController {
         final HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
         String header = request.getHeader("user-agent");
         System.out.println(header);
-        return "Hello!";
+        return "Hello springboot!";
     }
 
     @RequestMapping("getUsersByName")
