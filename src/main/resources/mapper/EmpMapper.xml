@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mb_demo.mapper.EmpMapper">
+    <cache eviction="LRU" readOnly="true" size="1024" flushInterval="10000"/>
     <resultMap id="empMap" type="Emp">
         <result property="id" column="id"/>
         <result property="name" column="name"/>

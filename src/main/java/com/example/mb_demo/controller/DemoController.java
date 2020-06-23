@@ -24,8 +24,6 @@ public class DemoController {
     @Autowired
     private EmpService empService;
 
-
-
     @RequestMapping("test")
     public String test(){
         final RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
@@ -43,6 +41,7 @@ public class DemoController {
     @GetMapping("getAllEmp")
     public List<Emp> getAllEmp(){
         System.out.println("11111");
+        empService.selectAllEmp();
         return empService.selectAllEmp();
     }
 }
