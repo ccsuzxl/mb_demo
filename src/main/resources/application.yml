@@ -10,6 +10,6 @@ spring:
 #    restart:
 #      additional-paths: src/main/java
 mybatis:
-  type-aliases-package: com.example.mb_demo.bean
   config-location: classpath:mybatis-config.xml
   mapper-locations: mapper/*.xml
+  type-aliases-package: com.example.mb_demo.bean

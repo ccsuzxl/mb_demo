@@ -5,6 +5,7 @@ import com.example.mb_demo.bean.User;
 import com.example.mb_demo.service.EmpService;
 import com.example.mb_demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,7 @@ public class DemoController {
     private EmpService empService;
 
 
+
     @RequestMapping("test")
     public String test(){
         final RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
@@ -38,7 +40,7 @@ public class DemoController {
         System.out.println("name:"+name+"   orderByColumn:"+orderByColumn);
         return userService.selectUserByName(name,orderByColumn);
     }
-    @PostMapping("getAllEmp")
+    @GetMapping("getAllEmp")
     public List<Emp> getAllEmp(){
         System.out.println("11111");
         return empService.selectAllEmp();

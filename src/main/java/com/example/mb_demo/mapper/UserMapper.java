@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
+@Mapper
 public interface UserMapper {
     @SelectProvider(type=UserSqlBuild.class,method = "buildSelectAllUser")
     @Results(

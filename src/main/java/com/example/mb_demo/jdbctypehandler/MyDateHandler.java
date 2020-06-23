@@ -1,5 +1,6 @@
 package com.example.mb_demo.jdbctypehandler;
 
+import com.example.mb_demo.controller.SingletonEnum;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.TypeHandler;
@@ -19,8 +20,7 @@ public class MyDateHandler implements TypeHandler {
     public Object getResult(ResultSet rs, String columnName) throws SQLException {
         Timestamp d=rs.getTimestamp(columnName);
         long time = d.getTime();
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return sdf.format(new Date(time));
+        return SingletonEnum.INSTANCE.getInstance().format(new Date(time));
     }
 
     @Override
